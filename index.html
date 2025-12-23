@@ -1,62 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News App</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 10px 20px;
+        }
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .card-content h6 {
+            margin: 0 0 10px 0;
+            font-size: 12px;
+            color: #777;
+        }
+        .card-content p {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
 </head>
-
 <body>
-    <nav>
-        <div class="main-nav container flex">
-            <a href="" class="company-logo">
-                <img src="./images/logo.png" alt="logo">
-            </a>
-            <div class="nav-links">
-                <ul class="flex">
-                    <li class="hover-link nav-item" id="cricket" onClick="onNavItemClick('cricket')">Cricket</li>
-                    <li class="hover-link nav-item" id="india" onClick="onNavItemClick('india')">India</li>
-                    <li class="hover-link nav-item" id="technology" onClick="onNavItemClick('technology')">Technology
-                    </li>
-                    <li class="hover-link nav-item" id="politics" onClick="onNavItemClick('politics')">Politics</li>
 
-                </ul>
+    <h1>News App</h1>
+
+    <div class="container">
+        <div class="cards-container">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200?text=Cricket" alt="Sri Lanka wins thrilling cricket match">
+                <div class="card-content">
+                    <h3>Sri Lanka wins thrilling cricket match</h3>
+                    <h6>Sports Desk · 22 Dec 2025</h6>
+                    <p>Sri Lanka secured a dramatic victory in the final over, thrilling fans across the country.</p>
+                </div>
             </div>
-            <div class="search-bar flex">
-                <input type="text" class="news-input" id="search-text" placeholder="e.g. Science">
-                <button class="search-button" id="search-button">Search</button>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200?text=India" alt="India launches new satellite">
+                <div class="card-content">
+                    <h3>India launches new satellite</h3>
+                    <h6>Science News · 22 Dec 2025</h6>
+                    <p>ISRO successfully launched a new communication satellite into orbit today.</p>
+                </div>
             </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200?text=Technology" alt="New AI technology changes future">
+                <div class="card-content">
+                    <h3>New AI technology changes future</h3>
+                    <h6>Tech World · 22 Dec 2025</h6>
+                    <p>Experts say AI will reshape industries faster than ever before.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200?text=Politics" alt="Parliament passes new bill">
+                <div class="card-content">
+                    <h3>Parliament passes new bill</h3>
+                    <h6>Political Desk · 22 Dec 2025</h6>
+                    <p>The government passed a major bill after long discussions in parliament.</p>
+                </div>
+            </div>
+
         </div>
-    </nav>
-
-
-    <main>
-        <div class="cards-container container flex" id="cardscontainer">
-
-
-
-        </div>
-    </main>
-
-    <template id="template-news-card">
-        <div class="card">
-            <div class="card-header">
-                <img src="https://via.placeholder.com/400x200" alt="" id="news-img">
-            </div>
-            <div class="card-content">
-                <h3 id="news-title">This is the Title</h3>
-                <h6 class="news-source" id="news-source">constGenius 02/02/2024</h6>
-                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem
-                    incidunt ratione, dolore beatae quaerat voluptatum autem fugit voluptas minima eligendi facere
-                    tenetur cumque. Dolorem porro, fugiat distinctio a accusamus cum!</p>
-            </div>
-        </div>
-    </template>
-
+    </div>
 
 </body>
-
 </html>

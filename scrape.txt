@@ -1,0 +1,22 @@
+const axios = require('axios');
+const cheerio = require('cheerio');
+
+
+async function search( ){
+const url = `https://webscrape2003.github.io/bot-news/`;
+const response = await axios.get(url);	
+const $ = cheerio.load(response.data);
+   
+    const title = $("body > div > div > div:nth-child(1) > div > h3").text()
+    const date = $("body > div > div > div:nth-child(1) > div > h6").text()
+    const desc = $("body > div > div > div:nth-child(1) > div > p").text()
+        const img = $("body > div > div > div:nth-child(1) > img").attr("src")
+
+    
+ console.log(title)
+console.log(img)
+console.log(date)
+console.log(desc)
+
+}
+search()
